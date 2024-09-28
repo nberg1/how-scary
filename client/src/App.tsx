@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+export interface IData {
+  users: string[];
+}
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
+  const [backendData, setBackendData] = useState<IData>();
 
   useEffect(() => {
     fetch('/api')
@@ -11,14 +14,16 @@ function App() {
       });
   }, []);
 
+
   return (
     <div>
       <h1>Message from Backend:</h1>
-
-      {typeof backendData.users === 'undefined' ? (
+      {typeof backendData?.users === 'undefined' ? (
         <p>Loading...</p>
       ) : (
-        backendData.users.map((user, i) => <p key={i}>{user}</p>)
+        backendData?.users.map((user, i) => 
+        <div key={i}>{user}</div>
+      )
       )}
     </div>
   );

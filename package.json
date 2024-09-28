@@ -4,9 +4,9 @@
   "description": "how scary website",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build --prefix frontend && npm run build --prefix backend",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server/server.js",
+    "server": "npm run dev --prefix server",
     "client": "npm start --prefix client",
     "test": "test",
     "prepare": "husky install",
