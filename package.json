@@ -4,9 +4,10 @@
   "description": "how scary website",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
     "test": "test",
     "prepare": "husky install",
     "lint": "eslint \"**/*.{mjs,ts,tsx}\""
@@ -31,6 +32,7 @@
     "express": "^4.21.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.11.1",
     "@types/ejs": "^3.1.5",
@@ -38,6 +40,7 @@
     "@types/node": "^22.7.4",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
+    "concurrently": "^9.0.1",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
