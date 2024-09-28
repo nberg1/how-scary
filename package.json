@@ -1,0 +1,29 @@
+{
+  "name": "how-scary",
+  "version": "1.0.0",
+  "description": "how scary website",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nberg1/how-scary.git"
+  },
+  "keywords": [
+    "how-scary"
+  ],
+  "author": "nberg1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nberg1/how-scary/issues"
+  },
+  "homepage": "https://github.com/nberg1/how-scary#readme",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
